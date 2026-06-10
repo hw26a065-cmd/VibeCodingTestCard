@@ -1,0 +1,6 @@
+{
+  "name": "ローグライクカードゲーム",
+  "description": "ダンジョンを1マスずつ進み、カードバトルやイベントを通じてデッキを強化しながらクリアを目指すローグライクカードゲームです。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

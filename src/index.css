@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Serif+JP:wght@700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Noto Serif JP', Georgia, serif;
+}
+
+.card-gradient {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+.mana-bubble {
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+}
+
+.intent-icon {
+  filter: drop-shadow(0 0 5px rgba(244, 63, 94, 0.8));
+}
+
+.node-active {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.scroll-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.glass-panel {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
