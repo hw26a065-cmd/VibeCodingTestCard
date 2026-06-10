@@ -180,6 +180,8 @@ export default function BattleScreen({
     // 3. DRAW EFFECT
     if (card.effect.draw !== undefined) {
       const count = card.effect.draw;
+      let drewAttackForOpportunity = false;
+      let drawnCardName = '';
       for (let i = 0; i < count; i++) {
         if (currentDrawPile.length === 0) {
           if (currentDiscardPile.length === 0) break; // no cards to draw
@@ -190,9 +192,17 @@ export default function BattleScreen({
         const nextCard = currentDrawPile.pop();
         if (nextCard) {
           currentHand.push(nextCard);
+          if (card.id.includes('k_opportunity') && nextCard.type === 'attack') {
+            drewAttackForOpportunity = true;
+            drawnCardName = nextCard.name;
+          }
         }
       }
       logDetail += `カードを ${card.effect.draw} 枚引いた。`;
+      if (drewAttackForOpportunity) {
+        setEnergy(prev => prev + 1);
+        logDetail += ` (「一瞬の機会」効果：アタック「${drawnCardName}」を引いたためエネルギー１回復！)`;
+      }
     }
 
     // 4. HEAL EFFECT (For life drain or mana self damage)

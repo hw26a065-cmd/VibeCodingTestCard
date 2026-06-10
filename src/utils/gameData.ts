@@ -94,6 +94,15 @@ export const KNIGHT_CARDS: Card[] = [
     effect: { damage: 26 },
     description: '敵に 26 の大ダメージを与える。',
     rarity: 'rare'
+  },
+  {
+    id: 'k_opportunity',
+    name: '一瞬の機会',
+    type: 'attack',
+    cost: 1,
+    effect: { damage: 3, draw: 1 },
+    description: '敵に 3 ダメージを与える。カードを 1 枚引く。引いたカードがアタックならエネルギーを 1 回復する。',
+    rarity: 'uncommon'
   }
 ];
 
